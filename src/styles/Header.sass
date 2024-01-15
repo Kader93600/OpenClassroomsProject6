@@ -1,0 +1,27 @@
+$color_1: #FF6060
+
+.conteneur_header 
+  display: flex
+  flex-wrap: nowrap
+  flex-direction: row
+  justify-content: space-between
+  padding: 0% 5% 0% 8%
+
+nav 
+  display: flex
+  flex-wrap: nowrap
+  flex-direction: row
+  justify-content: space-between
+  align-items: center
+  font-size: 25px
+  font-weight: bold
+  a 
+    text-decoration: none  
+    color: $color_1        
+
+    &:visited 
+      color: $color_1
+
+  a[href="/"] 
+    position: relative
+    right: 25%
