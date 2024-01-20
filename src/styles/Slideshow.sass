@@ -1,0 +1,52 @@
+$btn-color: white
+$carousel-border-radius: 20px
+$margin-horizontal: 8%
+$btn-font-size: 500%
+$btn-top-position: 22%
+
+.img_carrousel
+  width: 100%
+  height: 400px
+  margin-top: 3%
+  object-fit: cover
+  border-radius: $carousel-border-radius
+
+.btn_carrousel_prev, .btn_carrousel_next
+  background-color: inherit
+  color: $btn-color
+  position: absolute
+  top: $btn-top-position
+  font-size: $btn-font-size
+  cursor: pointer
+
+.btn_carrousel_next        
+  right: 10%
+
+.index_image
+  position: relative
+  left: 50%
+  margin-top: -3%
+  margin-bottom: 3%
+  color: $btn-color
+  width: 10%
+
+.margin_page
+  margin-left: $margin-horizontal
+  margin-right: $margin-horizontal
+
+
+@media all and (max-width: 767px) 
+    .img_carrousel
+        width: 100%
+        height: 4% 
+    
+    .btn_carrousel_prev, .btn_carrousel_next
+        background-color: inherit
+        color: $btn-color
+        position: absolute
+        top: 15%
+        font-size: $btn-font-size
+        cursor: pointer
+
+    .btn_carrousel_next        
+        right: 10%   

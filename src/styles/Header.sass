@@ -5,7 +5,8 @@ $color_1: #FF6060
   flex-wrap: nowrap
   flex-direction: row
   justify-content: space-between
-  padding: 0% 5% 0% 8%
+  padding: 0 5% 0 8%
+  margin-top: 2%
 
 nav 
   display: flex
@@ -25,3 +26,11 @@ nav
   a[href="/"] 
     position: relative
     right: 25%
+
+
+@media all and (max-width: 767px) 
+    nav
+      font-size: 12px
+    
+    img
+        width: 70%

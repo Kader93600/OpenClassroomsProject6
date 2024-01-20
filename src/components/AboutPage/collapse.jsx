@@ -16,14 +16,14 @@ function Collapse({collapseValue,collapseType}){
                     <button onClick={()=> setOpen(false)}> <img src={angle_up} alt="icone flèche d'angle visant le haut" /></button>
                 </div>
                 <div className="conteneur_texte">
-                    <div>{collapseValue}</div>
+                    <div className="txt_collapse">{collapseValue}</div>
                 </div>
             </div>
         ) : (
             <div className="conteneur_titre">
                     <p>{collapseType}</p>
                     <button onClick={()=> setOpen(true)}> <img src={angle_down} alt="icone flèche d'angle visant le bas" /></button>
-                </div>
+            </div>
         )
 }
 

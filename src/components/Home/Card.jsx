@@ -14,17 +14,20 @@ function Card() {
     }, []) 
 
     return (
-        <div className="all_card">
-            {houses.map(home => ( // Utilisez 'home' pour accéder aux propriétés de chaque maison.
-                <div key={home.id} className="card">
-                    <a href={'/House/' + home.id} className='link_card'>
-                        <img className="img_card" src={home.cover} alt="Illustration d'un logement" />
-                        <p className="txt_card">{home.title}</p>
-                    </a>
-                </div>
-            ))}
-        </div>
-    )
-}
-
-export default Card;
+      <div className="all_card">
+      {houses.map(home => (
+          <div key={home.id} className="card">
+              <a href={'/House/' + home.id} className='link_card'>
+                  <div className="img_container">
+                      <div className="img_gradient"></div>
+                      <img className="img_card" src={home.cover} alt="Illustration d'un logement" />
+                  </div>
+                  <p className="txt_card">{home.title}</p>
+              </a>
+          </div>
+      ))}
+  </div>
+      );
+    }
+    
+    export default Card;

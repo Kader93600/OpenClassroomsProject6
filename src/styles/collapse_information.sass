@@ -1,0 +1,75 @@
+$primary-color: #FF6060
+$secondary-color: #F6F6F6
+$font-color: white
+$border-radius-small: 7px
+$margin-horizontal: 10%
+$padding-horizontal: 2%
+
+
+button
+  color: $font-color
+  background-color: $primary-color
+  border: none
+
+ul
+  list-style-type: none
+
+
+.conteneur_collapse_titre
+  margin-left: $margin-horizontal
+  margin-right: $margin-horizontal
+  background-color: $primary-color
+  color: $font-color
+  display: flex
+  flex-wrap: nowrap
+  flex-direction: row
+  justify-content: space-between
+  padding-left: $padding-horizontal
+  padding-right: $padding-horizontal
+  margin-top: 2%
+  border-radius: $border-radius-small
+  z-index: 10
+  position: relative
+  width: 100%
+
+
+.conteneur_collapse_texte
+  margin-left: $margin-horizontal
+  margin-right: $margin-horizontal
+  background-color: $secondary-color
+  color: $primary-color
+  display: flex
+  flex-wrap: nowrap
+  flex-direction: row
+  justify-content: space-between
+  padding-left: $padding-horizontal
+  padding-top: 1%
+  border-radius: $border-radius-small
+  margin-top: -1%
+  z-index: 1
+
+  div
+    margin-bottom: 2%
+    margin-top: 3%
+
+
+.conteneur_ensemble_titre_texte
+  width: 45%
+
+
+@media all and (max-width: 767px) 
+    .conteneur_collapse_titre
+        margin-left: 8%
+        margin-right: 8%
+        margin-top: 4%
+    
+
+    .conteneur_collapse_texte div
+        margin-bottom: 15%
+        margin-top: 5%
+    
+
+    .conteneur_ensemble_titre_texte
+        width: 100%
+    
+    

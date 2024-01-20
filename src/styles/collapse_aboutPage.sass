@@ -1,53 +1,64 @@
-.conteneur_titre
-  display: flex
-  justify-content: center
-  margin-left: 10%
-  margin-right: 10%
-  background-color: #FF6060
-  color: white
-  display: flex
-  flex-wrap: nowrap
-  flex-direction: row
-  justify-content: space-between
-  padding-left: 2%
-  padding-right: 2%
-  margin-top: 2%
-  border-radius: 7px
-  width: 60%
-  box-sizing: border-box
-
-
-.conteneur_texte
-  margin: 0% 10%
-  background-color: #F6F6F6
-  color: #FF6060
-  display: flex
-  flex-wrap: nowrap
-  flex-direction: row
-  justify-content: space-between
-  padding-left: 2%
-  padding-top: 1%
-  border-radius: 7px
-  
-
-
-div
-  flex-direction: column
-  margin-bottom: 2%
-
-
-
-button
-  color: white
-  background-color: #FF6060
-  border: none
-
-.conteneur_texte
-  width: 60%
-  box-sizing: border-box
+$primary-color: #FF6060
+$secondary-color: #F6F6F6
+$font-color: white
+$border-radius: 10px
+$font-family: Montserrat
 
 .all_conteneur
   display: flex
   flex-direction: column
   align-items: center
-  width: 100% 
+  width: 100%
+
+.conteneur_titre
+  display: flex
+  justify-content: space-between
+  background-color: $primary-color
+  color: $font-color
+  border-radius: $border-radius
+  width: 60%
+  margin: 2% auto 0
+  font-weight: bold
+  padding: 0 2%
+  
+  button
+    color: $font-color
+    background-color: $primary-color
+    border-radius: $border-radius
+    border: none
+
+.conteneur_texte
+  width: 64%
+  background-color: $secondary-color
+  color: $primary-color
+  padding: 1% 2%
+  border-radius: $border-radius
+  box-sizing: border-box
+  
+  .txt_collapse
+    font-size: 15px
+    font-family: $font-family
+
+
+@media all and (max-width: 767px) 
+    .conteneur_collapse_titre
+        margin-left: 8%
+        margin-right: 8%
+        margin-top: 4%
+        width: 80%
+    
+    .conteneur_collapse_texte
+        width: 82%
+    
+
+    .conteneur_collapse_texte div
+        margin-bottom: 15%
+        margin-top: 5%
+    
+
+    .ensemble_conteneur_collapse
+        width:90%
+        margin-left:5%
+    
+    
+    
