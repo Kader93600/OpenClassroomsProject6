@@ -29,7 +29,8 @@ function Information() {
     ));
 
     return (
-
+        
+        <>
         <div className="conteneur_ensemble">
 
                 <div className="conteneur_1">
@@ -53,13 +54,13 @@ function Information() {
                     <div className="stars">{stars}</div>
                 </div>
 
-        
+        </div>
             <div className="container_collapse_house">
             <Collapse collapseType="Description" collapseValue={house.description} className="conteneur_titre_texte"/>
             <Collapse collapseType="Équipements" collapseValue={<ul>{house.equipments.map((equipment, index) => <li key={index}>{equipment}</li>)}</ul>} className="conteneur_titre_texte"/>
             </div>
+        </>
             
-        </div>
     );
 }
 

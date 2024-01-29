@@ -1,66 +1,71 @@
+// Couleurs et dimensions
 $background-color: #F6F6F6
 $border-radius-card: 15px
 $border-radius-image: 10px
 $font-color: white
 $gradient-color: #00000090
+$mobile-break: 767px
+$font-size-default: 15px
+$font-weight-bold: bold
 
+
+// Style carte
 .all_card
-    display: flex
-    justify-content: space-evenly
-    flex-wrap: wrap
-    margin: 0 8%
-    background-color: $background-color
-    border-radius: $border-radius-card
+  display: flex
+  justify-content: space-evenly
+  flex-wrap: wrap
+  margin: 0 8%
+  background-color: $background-color
+  border-radius: $border-radius-card
+
+  @media all and (max-width: $mobile-break)
+    background-color: white
 
 .card
-    position: relative
-    width: 25%
-    padding: 3%
-    object-fit: cover
+  position: relative
+  width: 25%
+  padding: 3%
+  object-fit: cover
+
+  @media all and (max-width: $mobile-break)
+    width: 100%
+    padding-left: 0
+    padding-right: 0
 
 .link_card
-    width: 100%
-    color: $font-color
-    font-weight: bold
-    position: relative
+  width: 100%
+  color: $font-color
+  font-weight: $font-weight-bold
+  position: relative
 
+// Style IMG
 .img_container
-    position: relative
-    width: 100%
-    height: 100%
-    border-radius: $border-radius-image
-    overflow: hidden
+  position: relative
+  width: 100%
+  height: 100%
+  border-radius: $border-radius-image
+  overflow: hidden
 
 .img_card
-    width: 100%
-    height: 100%
-    object-fit: cover
+  width: 100%
+  height: 100%
+  object-fit: cover
 
 .img_gradient
-    position: absolute
-    top: 0
-    left: 0
-    width: 100%
-    height: 100%
-    background-image: linear-gradient(to top, $gradient-color 14%, transparent)
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background-image: linear-gradient(to top, $gradient-color 14%, transparent)
+
+// Style TXT
 
 .txt_card
-    width: 50%
-    font-size: 15px
-    font-weight: bolder
-    position: absolute
-    bottom: 0
-    left: 2%
-    color: $font-color
-
-
-@media all and (max-width: 767px) 
-    .card
-        width: 100%
-        padding-left: 0%
-        padding-right: 0%
-    
-
-    .all_card
-        background-color: white
-    
+  width: 50%
+  font-size: $font-size-default
+  font-weight: $font-weight-bold
+  position: absolute
+  bottom: 0
+  left: 2%
+  color: $font-color

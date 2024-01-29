@@ -1,15 +1,27 @@
+// Variables de style
 $primary-color: #FF6060
 $secondary-color: #F6F6F6
 $font-color: white
 $border-radius: 10px
 $font-family: Montserrat
+$mobile-break: 767px
 
+// Mixins pour les styles répétitifs
+@mixin button-styles 
+  color: $font-color
+  background-color: $primary-color
+  border-radius: $border-radius
+  border: none
+
+
+// Styles principaux
 .all_conteneur
   display: flex
   flex-direction: column
   align-items: center
   width: 100%
 
+// Titre
 .conteneur_titre
   display: flex
   justify-content: space-between
@@ -22,11 +34,9 @@ $font-family: Montserrat
   padding: 0 2%
   
   button
-    color: $font-color
-    background-color: $primary-color
-    border-radius: $border-radius
-    border: none
+    @include button-styles
 
+// TXT
 .conteneur_texte
   width: 64%
   background-color: $secondary-color
@@ -39,26 +49,8 @@ $font-family: Montserrat
     font-size: 15px
     font-family: $font-family
 
-
-@media all and (max-width: 767px) 
-    .conteneur_collapse_titre
-        margin-left: 8%
-        margin-right: 8%
-        margin-top: 4%
-        width: 80%
-    
-    .conteneur_collapse_texte
-        width: 82%
-    
-
-    .conteneur_collapse_texte div
-        margin-bottom: 15%
-        margin-top: 5%
-    
-
-    .ensemble_conteneur_collapse
-        width:90%
-        margin-left:5%
-    
-    
-    
+@media all and (max-width: $mobile-break) 
+  .conteneur_titre, .conteneur_texte
+    width: 80%
+    margin-left: 10%
+    margin-right: 10%

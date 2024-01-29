@@ -4,42 +4,29 @@ $rayon-bordure: 40px
 $rayon-bordure-petit: 5px
 $marge-horizontale: 8%
 $padding-horizontale: 10%
-$marge-mobile: 20px
+$mobile-break: 767px
 
+// Conteneur principal
 .conteneur_ensemble
   display: flex
-  flex-direction: column
+  justify-content: space-between
   margin: 0 $marge-horizontale
 
-.head
-  display: flex
-  justify-content: space-between
-  align-items: center
-
+// Titre et localisation
 .title_emplacement
   .title
     color: $couleur-principale
-    font-size: 2em 
+    font-size: 30px 
+
   .localisation
     color: $couleur-principale
 
-// Ajout de la propriété 'display: flex;' pour aligner conteneur_1 et conteneur_2 côte à côte
-.conteneur_ensemble .conteneur_1_and_2
-  display: flex
-  flex-direction: row
-  justify-content: space-between
-  align-items: flex-start
-  width: 100% // Utilisez toute la largeur disponible
-
-.conteneur_1,
+// Conteneur secondaire
 .conteneur_2
   display: flex
   flex-direction: column
-  align-items: flex-start
-  width: 48% // Utilisez environ la moitié de la largeur pour chaque conteneur
-
-.conteneur_2
   align-items: flex-end
+  width: 50%
 
   .hote_et_nom
     display: flex
@@ -57,16 +44,13 @@ $marge-mobile: 20px
       border-radius: 50% 
       margin-bottom: 10px
 
-  .stars
-    display: flex
-    justify-content: flex-end
-    margin-top: 10px
-
+// Tags
 .tags
   display: flex
   justify-content: flex-start
   flex-wrap: wrap
   margin-top: 20px
+  
   .tag
     background-color: $couleur-principale
     color: $couleur-secondaire
@@ -74,5 +58,11 @@ $marge-mobile: 20px
     margin: 0 5px 5px 0
     padding: 5px 10px
 
-.container_collapse_house
-  margin-top: 20px
+// Mobiles
+@media all and (max-width: $mobile-break)
+  .conteneur_ensemble
+    display: flex
+    flex-direction: column
+
+  .conteneur_2
+    width: 100%

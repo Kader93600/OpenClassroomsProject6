@@ -1,5 +1,10 @@
-$color_1: #FF6060
+// Variables de style
+$color-primary: #FF6060
+$font-size-large: 25px
+$font-size-small: 15px
+$mobile-break: 767px
 
+// Styles du conteneur de l'en-tête
 .conteneur_header 
   display: flex
   flex-wrap: nowrap
@@ -8,29 +13,32 @@ $color_1: #FF6060
   padding: 0 5% 0 8%
   margin-top: 2%
 
+// Styles de la navigation
 nav 
   display: flex
   flex-wrap: nowrap
   flex-direction: row
   justify-content: space-between
   align-items: center
-  font-size: 25px
+  font-size: $font-size-large
   font-weight: bold
+
   a 
     text-decoration: none  
-    color: $color_1        
+    color: $color-primary       
 
     &:visited 
-      color: $color_1
+      color: $color-primary
 
   a[href="/"] 
     position: relative
     right: 25%
 
-
-@media all and (max-width: 767px) 
-    nav
-      font-size: 12px
-    
-    img
-        width: 70%
+// Mobiles
+@media all and (max-width: $mobile-break) 
+  nav
+    font-size: $font-size-small
+    font-weight: bolder
+  
+  img
+    width: 70%

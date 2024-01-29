@@ -1,8 +1,14 @@
+
 $font-color: white
 $banner-height: 300px
 $banner-radius: 20px
 $banner-brightness: 0.5
+$mobile-break: 767px
+$font-size-large: 48px
+$font-size-small: 24px
 
+
+// Styles du conteneur
 .conteneur_banner
   display: flex
   position: relative
@@ -12,11 +18,22 @@ $banner-brightness: 0.5
   padding: 0 8%
   height: $banner-height
 
+  @media all and (max-width: $mobile-break)
+    height: 200px
+
+// Styles du titre
 .title
   color: $font-color
-  font-size: 48px
+  font-size: $font-size-large
   z-index: 1
 
+  @media all and (max-width: $mobile-break)
+    top: 15%
+    left: 25%
+    width: 73%
+    font-size: $font-size-small
+
+// Styles de l'image de fond
 .img_banner
   width: 100%
   height: 100%
@@ -25,16 +42,5 @@ $banner-brightness: 0.5
   filter: brightness($banner-brightness)
   position: absolute
 
-
-
-@media all and (max-width: 767px)
-  .conteneur_banner
-    height: 200px
-
-  .title
-    top: 15%
-    left: 25%
-    width: 73%
-
-  .img_banner
-    height: 100%
+  @media all and (max-width: $mobile-break)
+    height: 57%

@@ -1,35 +1,41 @@
-$color_1: #FF6060
+// Variables de style
+$color-1: #FF6060
+$mobile-break: 767px
+$font-size-large: 288px
+$font-size-medium: 36px
+$font-size-small: 20px
 
+// Styles du conteneur d'erreur
 .conteneur_erreur
-  color: $color_1
+  color: $color-1
   display: flex
   flex-direction: column
   align-items: center
 
   h1
-    font-size: 288px
+    font-size: $font-size-large
     margin: 2%
 
   p
-    font-size: 36px
+    font-size: $font-size-medium
 
   a
     padding: 8%
     text-decoration: none
-    font-size: 20px
+    font-size: $font-size-small
     font-weight: bolder
     &:visited
-      color: $color_1
+      color: $color-1
 
-@media all and (max-width: 767px) 
-    .conteneur_erreur p
-        width: 50%
-        margin: 2%
-        font-size: 20px
-        align-items: center
-    
+// Mobiles
+@media all and (max-width: $mobile-break) 
+  .conteneur_erreur
+    p
+      width: 50%
+      margin: 2%
+      font-size: $font-size-small
+      align-items: center
 
-    .conteneur_erreur h1
-        font-size: 600%
-        margin-top: 20%
-    
+    h1
+      font-size: 600% 
+      margin-top: 20%

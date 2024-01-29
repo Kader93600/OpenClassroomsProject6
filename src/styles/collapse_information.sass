@@ -1,11 +1,21 @@
+// Variables de style
 $primary-color: #FF6060
 $secondary-color: #F6F6F6
 $font-color: white
 $border-radius-small: 7px
 $margin-horizontal: 10%
 $padding-horizontal: 2%
+$mobile-break: 767px
+
+// Mixins pour les styles répétitifs
+@mixin container-styles 
+  margin-left: $margin-horizontal
+  margin-right: $margin-horizontal
+  padding-left: $padding-horizontal
+  border-radius: $border-radius-small
 
 
+// Styles de base
 button
   color: $font-color
   background-color: $primary-color
@@ -14,37 +24,26 @@ button
 ul
   list-style-type: none
 
-
+// Titre collap
 .conteneur_collapse_titre
-  margin-left: $margin-horizontal
-  margin-right: $margin-horizontal
+  @include container-styles
   background-color: $primary-color
   color: $font-color
   display: flex
-  flex-wrap: nowrap
-  flex-direction: row
   justify-content: space-between
-  padding-left: $padding-horizontal
-  padding-right: $padding-horizontal
   margin-top: 2%
-  border-radius: $border-radius-small
   z-index: 10
   position: relative
   width: 100%
 
-
+// TXT collap
 .conteneur_collapse_texte
-  margin-left: $margin-horizontal
-  margin-right: $margin-horizontal
+  @include container-styles
   background-color: $secondary-color
   color: $primary-color
   display: flex
-  flex-wrap: nowrap
-  flex-direction: row
   justify-content: space-between
-  padding-left: $padding-horizontal
   padding-top: 1%
-  border-radius: $border-radius-small
   margin-top: -1%
   z-index: 1
 
@@ -52,24 +51,16 @@ ul
     margin-bottom: 2%
     margin-top: 3%
 
-
+// Conteneur Titre + TXT
 .conteneur_ensemble_titre_texte
   width: 45%
 
 
-@media all and (max-width: 767px) 
-    .conteneur_collapse_titre
-        margin-left: 8%
-        margin-right: 8%
-        margin-top: 4%
-    
+@media all and (max-width: $mobile-break) 
+  .conteneur_collapse_titre, .conteneur_collapse_texte
+    margin-left: 8%
+    margin-right: 8%
+    margin-top: 4%
 
-    .conteneur_collapse_texte div
-        margin-bottom: 15%
-        margin-top: 5%
-    
-
-    .conteneur_ensemble_titre_texte
-        width: 100%
-    
-    
+  .conteneur_ensemble_titre_texte
+    width: 100%
