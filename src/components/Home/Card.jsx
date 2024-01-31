@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom"; // Import de Link
 import '../../styles/Card.sass'
 
 function Card() {
@@ -17,13 +18,13 @@ function Card() {
       <div className="all_card">
       {houses.map(home => (
           <div key={home.id} className="card">
-              <a href={'/House/' + home.id} className='link_card'>
+              <Link to={'/House/' + home.id} className='link_card'>
                   <div className="img_container">
                       <div className="img_gradient"></div>
                       <img className="img_card" src={home.cover} alt="Illustration d'un logement" />
                   </div>
                   <p className="txt_card">{home.title}</p>
-              </a>
+              </Link>
           </div>
       ))}
   </div>

@@ -60,9 +60,28 @@ $mobile-break: 767px
 
 // Mobiles
 @media all and (max-width: $mobile-break)
+  .margin_page img
+    height: 250px
+
+  .margin_page p
+    bottom: 19px    
+  
   .conteneur_ensemble
     display: flex
     flex-direction: column
 
   .conteneur_2
     width: 100%
+    flex-direction: row-reverse
+    align-items: center
+    justify-content: space-between
+
+  .hote_et_nom
+    display: flex
+    flex-direction: row
+
+
+
+  .stars
+    display: flex
+    width: 10%

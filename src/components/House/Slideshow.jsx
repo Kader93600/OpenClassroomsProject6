@@ -1,24 +1,10 @@
 import "../../styles/Slideshow.sass"
 
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useState } from "react";
 
-function Slideshow() {
-
-    const [houses, setHouses] = useState([]);
+function Slideshow({house}) {
+   
     const [indexPictures, setIndexPictures] = useState(0);
-    let { id } = useParams();
-
-    useEffect(() => {
-        fetch('/Houselist.json')
-            .then(response => response.json())
-            .then(data => setHouses(data))
-    }, []);
-
-    const house = houses.find(house => house.id === id);
-    if (!house) {
-        return ('/error');  
-    }
 
     const { pictures } = house;
     const picturesLength = pictures.length;

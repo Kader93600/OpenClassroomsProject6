@@ -1,28 +1,12 @@
-import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
 import Collapse from '../../components/AboutPage/collapse.jsx';
 import '../../styles/information.sass';
 import '../../styles/collapse_information.sass';
 import etoileRouge from '../../assets/Etoile_rouge.png';
 import etoileGrise from '../../assets/Etoile_grise.png';
 
-function Information() {
-    const [houses, setHouses] = useState([]);
-    let { id } = useParams();
-    const navigate = useNavigate();
+function Information({house}) {
 
-    useEffect(() => {
-        fetch('/Houselist.json')
-            .then(response => response.json())
-            .then(data => setHouses(data))
-    }, []);
 
-    const house = houses.find(house => house.id === id);
-
-    if (!house) {
-        navigate("/error");
-        return ("/error");
-    }
 
     const stars = [...Array(5)].map((_, index) => (
         <img key={index} src={index < house.rating ? etoileRouge : etoileGrise} alt={index < house.rating ? 'Étoile rouge' : 'Étoile grise'} />

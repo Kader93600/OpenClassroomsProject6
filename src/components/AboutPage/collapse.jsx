@@ -20,9 +20,11 @@ function Collapse({collapseValue,collapseType}){
                 </div>
             </div>
         ) : (
+            <div className="all_conteneur">
             <div className="conteneur_titre">
                     <p>{collapseType}</p>
                     <button onClick={()=> setOpen(true)}> <img src={angle_down} alt="icone flèche d'angle visant le bas" /></button>
+            </div>
             </div>
         )
 }
