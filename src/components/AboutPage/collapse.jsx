@@ -16,18 +16,18 @@ function Collapse({ collapseValue, collapseType }) {
   
     return (
       <div className="all_conteneur">
-        
-        <div className="conteneur_titre">
-          <p>{collapseType}</p>
-          <button onClick={toggleCollapse}><img className={open ? 'rotate180' : ''} src={angle_up} alt="icone flèche d'angle" /></button>
-        </div>
-        
-        {open && (
-          <div className="conteneur_texte">
-            <div className="txt_collapse">{collapseValue}</div>
-          </div>
-        )}
+      
+      <div className="conteneur_titre">
+        <p>{collapseType}</p>
+        <button onClick={toggleCollapse}>
+          <img className={open ? 'rotate180' : ''} src={angle_up} alt="icone flèche d'angle" />
+        </button>
       </div>
+      
+      <div className={`conteneur_texte ${open ? 'open' : 'closed'}`}>
+        <div className="txt_collapse">{collapseValue}</div>
+      </div>
+    </div>
     );
   }
   
