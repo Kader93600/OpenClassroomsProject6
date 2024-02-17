@@ -25,8 +25,13 @@ function Header() {
 
     // Gère les événements de la souris pour les liens
     const handleMouse = (link, entering) => {
-    const isCurrentPage = (link === 'accueil' && location.pathname === '/') || (link === 'aPropos' && location.pathname === '/AboutPage'); /* */
     
+      /*Vérifie si  lien sur lequel la souris se trouve (ou quitte) correspond à la page actuelle. */
+      const isCurrentPage = 
+      (link === 'accueil' && location.pathname === '/') || 
+      (link === 'aPropos' && location.pathname === '/AboutPage');
+    
+      /*MAJ le soulignement*/
     setUnderlineWidths({
         ...underlineWidths,
         [link]: entering || isCurrentPage ? '100%' : '0',

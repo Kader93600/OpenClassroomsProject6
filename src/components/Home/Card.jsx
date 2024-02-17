@@ -6,11 +6,13 @@ function Card() {
 
     const [houses, setHouses] = useState([])
 
+
+    /* useEffect pour charger les données juste après que le composant apparait */
     useEffect(() => {
         fetch('/Houselist.json')
             .then(response => response.json())
             .then(data => {
-                setHouses(data) // MAJ des maisons
+                setHouses(data) /* MAJ des maisons */
             })
     }, []) 
 
