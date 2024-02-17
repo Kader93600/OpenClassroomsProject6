@@ -8,7 +8,7 @@ import "../../styles/Font.sass"
 
 function Collapse({ collapseValue, collapseType }) {
     
-  const [open, setOpen] = useState(false); /* Gérer l'état d'ouverture */
+  const [open, setOpen] = useState(false); /* Gérer l'état d'ouverture Etat de base collapse fermé*/
   
     const toggleCollapse = () => {
       setOpen(!open);  /*Inverse l'état de open à chaque clique */
@@ -16,10 +16,9 @@ function Collapse({ collapseValue, collapseType }) {
   
     return (
       <div className="all_conteneur">
-      
       <div className="conteneur_titre">
         <p>{collapseType}</p>
-        <button onClick={toggleCollapse}>
+        <button onClick={toggleCollapse}> 
           <img className={open ? 'rotate180' : ''} src={angle_up} alt="icone flèche d'angle" />
         </button>
       </div>
