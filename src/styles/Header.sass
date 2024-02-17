@@ -2,7 +2,7 @@
 $color-primary: #FF6060
 $font-size-large: 25px
 $font-size-small: 15px
-$mobile-break: 767px
+$mobile-break: 975px
 
 // Styles du conteneur de l'en-tête
 .conteneur_header 
@@ -13,7 +13,7 @@ $mobile-break: 767px
   padding: 0 5% 0 8%
   margin-top: 2%
 
-// Styles de la navigation
+
 nav 
   display: flex
   flex-wrap: nowrap
@@ -30,9 +30,16 @@ nav
     &:visited 
       color: $color-primary
 
+  span.underline 
+    height: 2px
+    background-color: $color-primary
+    display: block
+
+
   a[href="/"] 
     position: relative
     right: 25%
+
 
 // Mobiles
 @media all and (max-width: $mobile-break) 

@@ -1,10 +1,11 @@
 // Variables de style
 $primary-color: #FF6060
 $secondary-color: #F6F6F6
+$thirdly-color:#000000
 $font-color: white
 $border-radius: 10px
 $font-family: Montserrat
-$mobile-break: 767px
+$mobile-break: 975px
 
 // Mixins
 @mixin button-styles 
@@ -33,24 +34,44 @@ $mobile-break: 767px
   font-weight: bold
   padding: 0 2%
   
+  p
+    font-size: 20px
+    font: bolder 
+
   button
     @include button-styles
+    img
+      width: 200%
+      transition: transform 0.3s ease
+      cursor: pointer
+
 
 // TXT
 .conteneur_texte
   width: 64%
   background-color: $secondary-color
-  color: $primary-color
+  color: thirdly-color
   padding: 1% 2%
   border-radius: $border-radius
   box-sizing: border-box
   
-  .txt_collapse
-    font-size: 15px
-    font-family: $font-family
+  
+.txt_collapse
+ font-size: 20px
+ font-family: $font-family
+
+.rotate180
+  transform: rotate(-180deg)
+  
 
 @media all and (max-width: $mobile-break) 
   .conteneur_titre, .conteneur_texte
     width: 80%
     margin-left: 10%
     margin-right: 10%
+
+  .txt_collapse
+    font-size: 15px
+
+
+

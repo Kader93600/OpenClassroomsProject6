@@ -1,5 +1,9 @@
 import "../../styles/Slideshow.sass"
 
+import angle_left from "../../assets/angle_left.svg"
+import angle_right from "../../assets/angle_right.svg"
+
+
 import { useState } from "react";
 
 function Slideshow({house}) {
@@ -21,15 +25,25 @@ function Slideshow({house}) {
     
     return (
         <div className="margin_page">
+            {picturesLength > 1 && (
+                <>
+                    <button onClick={prevClick} className="btn_carrousel_prev"> 
+                        <img src={angle_left} alt="Précédent" /> 
+                    </button>
+                    
+                    <button onClick={clickNext} className="btn_carrousel_next">
+                        <img src={angle_right} alt="Suivant" />
+                    </button>
+                </>
+            )}
             
-            <button onClick={prevClick} className="btn_carrousel_prev">{"<"}</button>
             <img src={currentPicture} alt="Carrousel d'une illustration" className="img_carrousel"/>
             
-            <button onClick={clickNext} className="btn_carrousel_next">{">"}</button>
             <p className="index_image">{indexPictures + 1}/{picturesLength}</p>
         </div>
     );
     
 }
+
 
 export default Slideshow;
