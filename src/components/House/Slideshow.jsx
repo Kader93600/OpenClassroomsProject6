@@ -34,12 +34,12 @@ function Slideshow({house}) {
                     <button onClick={clickNext} className="btn_carrousel_next">
                         <img src={angle_right} alt="Suivant" />
                     </button>
+                    <p className="index_image">{indexPictures + 1}/{picturesLength}</p>
                 </>
             )}
             
             <img src={currentPicture} alt="Carrousel d'une illustration" className="img_carrousel"/>
             
-            <p className="index_image">{indexPictures + 1}/{picturesLength}</p>
         </div>
     );
     

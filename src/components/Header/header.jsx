@@ -5,10 +5,10 @@ import '../../styles/Header.sass';
 function Header() {
   const location = useLocation();
 
+  
   /*Déterminer le soulignement basée sur le chemin*/
-
   const getUnderlineWidth = (path) => {
-      return location.pathname === path ? '100%' : '0';
+      return location.pathname === path ? '100%' : '0'; /*Compare URL actuel et chemin path. Si l.p = path soulignement du nav sinon pas de soulignement*/
   };
 
   return (
